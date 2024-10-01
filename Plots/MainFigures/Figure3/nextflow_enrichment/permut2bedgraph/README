@@ -1,0 +1,18 @@
+1. Install to BIN="/mnt/volume1/SG10K-SV-NOTEBOOK/noncoding/bin" # Edit bin to your local path in .sh script
+a. bedGraphToBigWig in BIN folder
+b. bedops in BIN folder
+c. bedtools in $PATH
+
+2. To Run
+After running main.nf for the noncoding analysis, result folder should have this 4 subfolder
+a. pipeline_info
+b. iter-summaries
+c. main-vcf-summaries
+d. shuffled_bed
+proc_bedgraph2bigWig.sh assumes the parameter FOLDER=<nextflow_result_folder>
+CMD:
+./proc_bedgraph2bigWig.sh >bigWig.log 2>bigWig.error
+
+3. Result
+Generated bigWig (.bw) file can be visualized in IGV to view the permutated VCF coordinates coverage on the human genome. 
+Main assumption is that permutation will not be bias and we should see an even coverage of genome.

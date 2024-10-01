@@ -1,0 +1,14 @@
+name: noncoding
+channels:
+  - defaults
+  - bioconda
+  - conda-forge
+dependencies:
+  - python=3.9
+  - bedtools
+  - bcftools=1.16
+  - pip
+  pip:
+    - pandas
+    - matplotlib
+    - seaborn
